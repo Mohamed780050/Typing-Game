@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+$border-color: red;
+@mixin list-reset() {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+@mixin reset-btn() {
+    border: none;
+    outline: none;
+}
+@mixin Ancor-reset(){
+    text-decoration: none;
+}
+// Displaying
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-ac-jsb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+// before and after that makes arrows
+@mixin make-Arrow($dirction, $border-color, $border-width) {
+    border-width: $border-width;
+    border-style: solid;
+    border-color: transparent;
+    position: absolute;
+    @if $dirction == "top" {
+        top: -40px;
+        left: 50%;
+        border-bottom-color: $border-color;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+    }
+    @else if $dirction == "bottom" {
+        bottom: -40px;
+        left: 50%;
+        border-top-color: $border-color;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+    }
+    @else if $dirction == "right" {
+        right: -40px;
+        top: 50%;
+        border-left-color: $border-color;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+}
+    @else if $dirction == "left" {
+        left: -40px;
+        top: 50%;
+        border-right-color: $border-color;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+}
+}
